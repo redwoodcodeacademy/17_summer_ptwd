@@ -1,0 +1,185 @@
+/************ GLOBAL ************/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sectionHeading {
+  font-weight: 100;
+  font-size: 2em;
+  margin-top: 90px;
+  margin-bottom: 15px;
+}
+
+.whiteFont {
+  color: white;
+}
+
+/************ NAV BAR ************/
+
+nav {
+  height: 84px;
+  background: #fff;
+  opacity: .95;
+}
+
+.nav {
+  margin: 35px 30px 10px 0;
+  padding-right: 20px;
+}
+
+.nav>li {
+  position: relative;
+  display: inline;
+}
+
+.nav>li>a {
+  display: inline;
+  color: black;
+}
+
+.nav>li>a:hover {
+  background-color: transparent;
+  color: #999;
+}
+
+.logo {
+  max-width: 200px;
+  margin: 25px 0 20px 50px;
+}
+
+/************ HERO ************/
+
+header {
+  background: url("./assets/hero.jpg") center center;
+  height: 700px;
+}
+
+.hero {
+  color: white;
+  font-weight: 900;
+  font-size: 90px;
+  text-align: center;
+  padding-top: 300px;
+  margin-top: 0px;
+}
+
+.subHero {
+  color: white;
+  text-align: center;
+  font-weight: 100;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/************ ABOUT ************/
+
+.aboutSection {
+  background: white;
+
+}
+.aboutImage {
+  background: url("./assets/kitchen.jpg")no-repeat center center ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 660px;
+}
+
+.aboutContent {
+  margin: 20px;
+  padding: 20% 15% 25% 15%;
+}
+
+/************ PRICING ************/
+
+.pricingSection {
+  background-color: #1b1b1b;
+  color: white;
+  text-align: center;
+}
+
+.pricingContainer {
+  margin: 40px 0 60px 0;
+}
+
+.pricingImg {
+  width: 140px;
+}
+
+.pricing {
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+
+.pricingText {
+  font-weight: 100;
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 26px;
+}
+
+.pricingHeader {
+  font-weight: 100;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+
+/************ CONTACT ************/
+
+.contactSection {
+  background: url("./assets/contact.jpg")no-repeat right center ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.contactContainer {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-control {
+  border: 1px solid black;
+  border-radius: 0px;
+  height: 40px;
+}
+
+textarea.form-control {
+  height: 100px;
+}
+
+.contactButton {
+  background: black;
+  color: white;
+  border-color: transparent;
+  border-radius: 0;
+  float: right;
+  margin-bottom: 30px;
+}
+
+.contactButton:hover {
+  background: white;
+  color: black;
+  border-color: black;
+  border-radius: 0;
+}
+
+.footer {
+  margin: 30px 0;
+  font-weight: 100;
+  text-align: center;
+  font-size: 12px;
+  clear: both;
+}
