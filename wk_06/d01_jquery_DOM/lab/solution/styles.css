@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  color: white
+}
+
+h3 {
+  margin: 5px;
+  font-size: 20px;
+}
+
+.header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.blackText {
+  color: black
+}
+
+.contentCard {
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 20px;
+  min-height: 190px;
+}
+
+.redBG {
+  background-color: red;
+}
+
+.greenBG {
+  background-color: green;
+}
+
+.grayBG {
+  background-color: #888;
+}
+
+.lightGrayBG {
+  background-color: #aaa
+}
+
+.lighterGrayBG {
+  background-color: #ccc;
+}
