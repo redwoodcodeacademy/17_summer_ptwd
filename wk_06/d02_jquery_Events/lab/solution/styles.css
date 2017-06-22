@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#firstNameMessage, #lastNameMessage {
+  font-size: 10px;
+  color: red;
+}
+
+h1 {
+  margin: 0
+}
+
+.userBody button {
+  margin-right: 10px;
+}
+
+.heroHeadline {
+  text-align: center;
+  font-size: 50px;
+  margin: 25px;
+}
+.userHeader{
+  background-color: #b0b0b0;
+  padding: 10px;
+}
+
+.userBody{
+  background-color: #eee;
+  padding: 15px;
+}
+
+.userCard {
+  margin: 20px 0;
+}
