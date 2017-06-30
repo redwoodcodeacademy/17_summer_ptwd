@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="toDoApp">
+<head>
+  <meta charset="UTF-8">
+  <title>ToDoList - Solution Code</title>
+
+  <!-- Google Font - Open Sans -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+  <!-- Bootstrap CDN 3.3.7 -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- Angular CDN 1.5.7 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+
+</head>
+<body ng-controller="toDoController">
+  <div class="container">
+
+    <div class="col-md-4" ng-repeat="list in lists">
+      <div class="list-container">
+        <div class="list-header">
+          <h1 class="list-heading">{{ list.listName }}</h1>
+          <span class="list-delete" ng-click="deleteList(list)">X</span>
+        </div>
+        <div class="list-body">
+          <div class="form-group">
+            <input type="text" class="cinput" ng-model="list.newItem">
+            <button class="cbtn" ng-click="addItem(list)">Add</button>
+          </div>
+          <div class="to-do-item" ng-repeat="item in list.toDos">
+            <div class="item-checkbox" ng-class="{'item-checkbox-checked' : item.isDone}" ng-click="updateItem(item)"></div>
+            <span>{{ item.title }}</span>
+          </div>
+          <div class="archived">
+            <span>Show Archived</span> <input type="checkbox" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-md-4">
+      <div class="list-container list-container-new">
+        <h2 class="new-list">ADD LIST</h2>
+        <div class="add-button" ng-click="addList()">
+          <div class="up"></div>
+          <div class="down"></div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+<!-- Modules -->
+<script type="text/javascript" src="./app.js"></script>
+
+<!-- Controllers -->
+<script type="text/javascript" src="./controllers/todoController.js"></script>
+</body>
+</html>

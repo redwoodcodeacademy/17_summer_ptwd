@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.new-list {
+  text-align: center;
+  font-weight: 900;
+  font-size: 50px;
+  margin-top: 80px;
+}
+
+.up {
+  background: #00cc00;
+  width: 20px;
+  height: 100px;
+  position: relative;
+  top: 16%;
+  left: 44%;
+}
+
+.down {
+  background: #00cc00;
+  width: 100px;
+  height: 20px;
+  position: relative;
+  top: -23%;
+  left: 16%;
+}
+
+.add-button {
+  border: 1px solid black;
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  margin: 55px auto;
+}
+
+.list-container {
+  margin-top: 30px;
+  background: #ddd;
+  padding-bottom: 30px;
+  min-height: 450px;
+}
+
+.list-container-new {
+  background: white;
+  border: 1px solid black;
+}
+
+.list-header {
+  background: #aaa;
+  padding: 30px 0;
+}
+
+.list-heading {
+  text-align: center;
+  font-weight: 800;
+  margin: 0;
+}
+
+.list-body {
+  padding: 20px 30px;
+}
+
+.list-delete {
+  font-size: 12px;
+  font-weight: 900;
+  display: block;
+  float: right;
+  padding-right: 25px;
+  margin-top: -55px;
+  cursor: pointer;
+}
+
+.to-do-item {
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.to-do-item span {
+  padding-left: 20px;
+  font-weight: 600;
+}
+
+.archived {
+  float: right;
+  padding-top: 10px;
+}
+
+.cinput {
+  border: 1px solid black;
+  padding: 10px;
+  width: 80%;
+}
+
+.cbtn  {
+  padding: 14px 15px 11px 15px;
+  background: #00cc00;
+  font-size: 12px;
+  border: 0;
+  color: white;
+  font-weight: 600;
+  margin-left: -5px;
+  border: 1px solid black;
+}
+
+.item-checkbox {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 1px solid black;
+  display: inline-block;
+  margin: -5px;
+  cursor: pointer;
+}
+
+.item-checkbox-checked {
+  background: #00cc00;
+}
+
+button:focus, input:focus, textarea:focus {
+  outline: none;
+}
