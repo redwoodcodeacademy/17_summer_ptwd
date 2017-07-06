@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ticketApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Filters - Solution Code</title>
+
+  <!-- Google Font - Open Sans -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+  <!-- Bootstrap CDN 3.3.7 -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- Angular CDN 1.5.7 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+
+</head>
+<body ng-controller="userController">
+
+  <div class="container">
+
+    <h1 class="hero">Create An Account!</h1>
+
+    <div class="row">
+      <h3 class="sectionHeader">Personal Information</h3>
+
+      <div class="form-group col-md-6">
+        <label>First Name</label>
+        <input type="text" class="form-control" placeholder="First Name" ng-model="firstName">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Last Name</label>
+        <input type="text" class="form-control" placeholder="Last Name" ng-model="lastName">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label>Email</label>
+        <input type="email" class="form-control" placeholder="first.lastName@gmail.com" ng-model="email">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label>Phone</label>
+        <input type="text" class="form-control" placeholder="(555)-555-5555" ng-model="phone">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label>Date Of Birth</label>
+        <input type="date" class="form-control" ng-model="dob">
+      </div>
+    </div>
+
+    <div class="row">
+      <h3 class="sectionHeader">Billing Address</h3>
+
+      <div class="form-group col-md-12">
+        <label>Street Address</label>
+        <input type="text" class="form-control" placeholder="100 Main Street" ng-model="street1">
+      </div>
+
+      <div class="form-group col-md-12">
+        <label>Address (optional)</label>
+        <input type="text" class="form-control" placeholder="Apt #" ng-model="street2">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label>City</label>
+        <input type="text" class="form-control" placeholder="Los Angeles" ng-model="city">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label>State</label>
+        <input type="text" class="form-control" placeholder="CA" ng-model="state">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label>Zip</label>
+        <input type="text" class="form-control" placeholder="12345" ng-model="zip">
+      </div>
+    </div>
+
+    <div class="row">
+      <h3 class="sectionHeader">Billing Information</h3>
+
+      <div class="form-group col-md-12">
+        <label>Credit Card Number</label>
+        <input type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx" ng-model="cardNumber">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Card Type</label>
+        <input type="text" class="form-control" placeholder="Visa, Master Card, Discover, etc." ng-model="cardType">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Security Code</label>
+        <input type="text" class="form-control" placeholder="XXX" ng-model="security">
+      </div>
+
+      <button ng-click="addUser()" class="btn btn-primary btn-lg pull-right cbtn" ng-show="submitButton">Submit</button>
+      <button ng-click="saveUser()" class="btn btn-success btn-lg pull-right cbtn" ng-show="saveButton">Save</button>
+    </div>
+
+    <div class="form-group">
+      <h2>Search For Users</h2>
+      <input type="text" class="form-control" placeholder="Search..." ng-model="userSearch">
+    </div>
+
+    <div class="row userSection">
+      <div class="userContainer col-md-3" ng-repeat="user in users | filter: userSearch">
+        <div class="userHeader">
+          <h1 class="userHeading">{{ user.firstName }} {{ user.lastName }}</h1>
+        </div>
+        <div class="userBody">
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Phone:</strong> {{ user.phone }}</p>
+          <p><strong>DOB:</strong> {{ user.dob | date: 'MM/dd/yyyy'}}</p>
+          <p><strong>Address:</strong> {{ user.streetOne }}</p>
+          <p><strong>City:</strong> {{ user.city }}</p>
+          <p><strong>State:</strong> {{ user.state }}</p>
+          <p><strong>Zip:</strong> {{ user.zip }}</p>
+          <button class="btn btn-info" ng-click="updateUser(user)">Update</button>
+          <button class="btn btn-danger" ng-click="deleteUser(user)">Delete</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- Container End -->
+
+<script type="text/javascript" src="./app.js"></script>
+<script type="text/javascript" src="./controllers/userController.js"></script>
+</body>
+</html>
