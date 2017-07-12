@@ -1,0 +1,102 @@
+<div class="container">
+
+  <h1 class="hero">Create An Artist!</h1>
+
+  <div class="row">
+    <h3 class="sectionHeader">Artist Information</h3>
+
+    <div class="form-group col-md-6">
+      <label>Artist Name / Stage Name</label>
+      <input type="text" class="form-control" placeholder="First Name" ng-model="firstName">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Last Name</label>
+      <input type="text" class="form-control" placeholder="Last Name (optional)" ng-model="lastName">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Genre</label>
+      <input type="text" class="form-control" placeholder="Pop" ng-model="genre">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Tour Name</label>
+      <input type="text" class="form-control" ng-model="tourName">
+    </div>
+    <button class="btn pull-right btn-primary" ng-show="artistSubmitButton" ng-click="addArtist()">Submit</button>
+    <button class="btn pull-right btn-success" ng-show="artistSaveButton" ng-click="saveArtist()">Save</button>
+  </div>
+
+  <div class="form-group">
+    <h2>Search For Artist</h2>
+    <input type="text" class="form-control" placeholder="Search..." ng-model="artistSearch">
+  </div>
+
+  <div class="row userSection">
+    <div class="userContainer col-md-3" ng-repeat="artist in artists | filter: artistSearch">
+      <div class="userHeader">
+        <h1 class="userHeading">{{ artist.firstName }} {{ artist.lastName }}</h1>
+      </div>
+      <div class="userBody">
+        <p><strong>Genre:</strong> {{ artist.genre }}</p>
+        <p><strong>Current Tour:</strong> {{ artist.tourName }}</p>
+        <button class="btn btn-primary btn-sm" ng-click="addArtistShow(artist)">+ Show</button>
+        <button class="btn btn-info btn-sm" ng-click="updateArtist(artist)">Update</button>
+        <button class="btn btn-danger btn-sm" ng-click="deleteArtist(artist)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!--- SHOW SECTION --->
+
+  <div class="row" ng-show="showSection">
+    <h3 class="sectionHeader">{{ artistName }} Show Information!</h3>
+
+    <div class="form-group col-md-6">
+      <label>Tour Name</label>
+      <input type="text" class="form-control" placeholder="First Name" ng-model="artistTour">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Show Date</label>
+      <input type="date" class="form-control" placeholder="Last Name (optional)" ng-model="showDate">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Show Location</label>
+      <input type="text" class="form-control" placeholder="Dallas" ng-model="showLocation">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Ticket Count</label>
+      <input type="text" class="form-control" placeholder="20000" ng-model="ticketCount">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Ticket Price</label>
+      <input type="text" class="form-control" placeholder="35" ng-model="ticketPrice">
+    </div>
+
+    <button class="btn pull-right btn-primary cbtn" ng-show="showSubmitButton" ng-click="addShow()">Submit</button>
+    <button class="btn pull-right btn-success cbtn" ng-show="showSaveButton" ng-click="saveShow()">Save</button>
+
+    <div class="row showSection">
+      <div class="showContainer col-md-3" ng-repeat="show in shows" ng-show="show.artistId == currentArtistId">
+        <div class="showHeader">
+          <h1 class="showHeading">{{ show.artistTour }}</h1>
+        </div>
+        <div class="showBody">
+          <p><strong>Date:</strong> {{ show.showDate | date: "MM/dd/yyyy"}}</p>
+          <p><strong>Location:</strong> {{ show.showLocation }}</p>
+          <p><strong>Price:</strong> {{ show.ticketPrice }}</p>
+          <p><strong>Arena Size:</strong> {{ show.ticketCount }}</p>
+          <button class="btn btn-info btn-sm" ng-click="updateShow(show)">Update</button>
+          <button class="btn btn-danger btn-sm" ng-click="deleteShow(show)">Delete</button>
+        </div>
+      </div>
+      <button class="btn cbtn btn-default pull-right" ng-click="collapseShow()">Collapse</button>
+    </div>
+  </div>
+
+</div><!-- Container End -->
