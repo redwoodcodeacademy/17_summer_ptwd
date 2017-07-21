@@ -1,0 +1,50 @@
+<div class="container">
+
+  <h1 class="hero">Create An Artist!</h1>
+
+  <div class="row">
+    <h3 class="sectionHeader">Artist Information</h3>
+
+    <div class="form-group col-md-6">
+      <label>Artist Name / Stage Name</label>
+      <input type="text" class="form-control" placeholder="First Name" ng-model="firstName">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Last Name</label>
+      <input type="text" class="form-control" placeholder="Last Name (optional)" ng-model="lastName">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Genre</label>
+      <input type="text" class="form-control" placeholder="Pop" ng-model="genre">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Tour Name</label>
+      <input type="text" class="form-control" ng-model="tourName">
+    </div>
+    <button class="btn pull-right btn-primary" ng-show="artistSubmitButton" ng-click="addArtist()">Submit</button>
+    <button class="btn pull-right btn-success" ng-show="artistSaveButton" ng-click="saveArtist()">Save</button>
+  </div>
+
+  <div class="form-group">
+    <h2>Search For Artist</h2>
+    <input type="text" class="form-control" placeholder="Search..." ng-model="artistSearch">
+  </div>
+
+  <div class="row userSection">
+    <div class="userContainer col-md-3" ng-repeat="artist in artists | filter: artistSearch">
+      <div class="userHeader">
+        <h1 class="userHeading">{{ artist.firstName }} {{ artist.lastName }}</h1>
+      </div>
+      <div class="userBody">
+        <p><strong>Genre:</strong> {{ artist.genre }}</p>
+        <p><strong>Current Tour:</strong> {{ artist.tourName }}</p>
+        <button class="btn btn-info btn-sm" ng-click="updateArtist(artist)">Update</button>
+        <button class="btn btn-danger btn-sm" ng-click="deleteArtist(artist)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- Container End -->

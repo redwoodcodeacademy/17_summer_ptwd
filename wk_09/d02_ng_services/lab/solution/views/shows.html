@@ -1,0 +1,66 @@
+<div class="container">
+  <h1 class="hero">Create A Show!</h1>
+
+  <div class="row">
+    <h3 class="sectionHeader">Show Information</h3>
+
+    <div class="form-group col-md-12">
+      <label>Artist</label>
+      <select class="form-control" ng-model="artistId">
+        <option ng-repeat="artist in artists" value="{{ artist.id }}">{{ artist.firstName }} {{ artist.lastName }}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Tour Name</label>
+      <input type="text" class="form-control" placeholder="First Name" ng-model="tourName">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Show Date</label>
+      <input type="date" class="form-control" placeholder="Last Name (optional)" ng-model="showDate">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Show Location</label>
+      <input type="text" class="form-control" placeholder="Dallas" ng-model="showLocation">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Ticket Count</label>
+      <input type="text" class="form-control" placeholder="20000" ng-model="ticketCount">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Ticket Price</label>
+      <input type="text" class="form-control" placeholder="35" ng-model="ticketPrice">
+    </div>
+
+    <button class="btn pull-right btn-primary cbtn" ng-show="showSubmitButton" ng-click="addShow()">Submit</button>
+    <button class="btn pull-right btn-success cbtn" ng-show="showSaveButton" ng-click="saveShow()">Save</button>
+  </div>
+
+  <div class="form-group">
+    <h2>Search For Shows</h2>
+    <input type="text" class="form-control" placeholder="Search..." ng-model="showSearch">
+  </div>
+
+  <div class="row showSection">
+
+    <div class="showContainer col-md-3" ng-repeat="show in shows | filter: showSearch">
+      <div class="showHeader">
+        <h1 class="showHeading">{{ show.tourName }}</h1>
+      </div>
+      <div class="showBody">
+        <p><strong>Date:</strong> {{ show.showDate | date: "MM/dd/yyyy"}}</p>
+        <p><strong>Location:</strong> {{ show.showLocation }}</p>
+        <p><strong>Price:</strong> {{ show.ticketPrice }}</p>
+        <p><strong>Arena Size:</strong> {{ show.ticketCount }}</p>
+        <button class="btn btn-info btn-sm" ng-click="updateShow(show)">Update</button>
+        <button class="btn btn-danger btn-sm" ng-click="deleteShow(show)">Delete</button>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- Container End -->

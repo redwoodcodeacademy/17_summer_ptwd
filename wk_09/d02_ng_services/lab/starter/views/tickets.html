@@ -1,0 +1,59 @@
+<div class="container">
+
+  <h1 class="hero">Create A Ticket!</h1>
+
+  <div class="row">
+    <h3 class="sectionHeader">Ticket Information</h3>
+
+    <div class="form-group col-md-12">
+      <label>Artist Name</label>
+      <input type="text" class="form-control" placeholder="Artist Name" ng-model="artistName">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Event Date</label>
+      <input type="date" class="form-control" ng-model="date">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Price</label>
+      <input type="text" class="form-control" placeholder="$35" ng-model="price">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Seat Section</label>
+      <input type="text" class="form-control" placeholder="404" ng-model="sSection">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Seat Row</label>
+      <input type="text" class="form-control" placeholder="B" ng-model="sRow">
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Seat Number</label>
+      <input type="text" class="form-control" placeholder="4" ng-model="sNumber">
+    </div>
+
+    <button ng-click="submitTicket()" ng-show="submitButton" class="btn cbtn btn-primary btn-lg pull-right ">Submit</button>
+    <button ng-click="saveTicket()" ng-show="saveButton" class="btn cbtn btn-success btn-lg pull-right ">Save</button>
+  </div>
+
+  <div class="row ticketSection">
+    <div class="ticketContainer col-md-3" ng-repeat="ticket in tickets">
+      <div class="ticketHeader">
+        <h1 class="ticketHeading">{{ ticket.artistName }}</h1>
+      </div>
+      <div class="ticketBody">
+        <p><strong>Date:</strong> {{ ticket.date }}</p>
+        <p><strong>Price:</strong> ${{ ticket.price }}</p>
+        <p><strong>Section:</strong> {{ ticket.section }}</p>
+        <p><strong>Row:</strong> {{ ticket.row }}</p>
+        <p><strong>Seat:</strong> {{ ticket.seat }}</p>
+        <button class="btn btn-info" ng-click="updateTicket(ticket)">Update</button>
+        <button class="btn btn-danger" ng-click="deleteTicket(ticket)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- Container End -->
